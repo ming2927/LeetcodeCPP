@@ -27,12 +27,12 @@ ListNode* numList(int num){
 
 //converts LinkedList arg to int number
 int getNum(ListNode* lnode){
-        int exponentOfTen = 1;
+        int multipleOfTen = 1;
         int num = 0;
         ListNode* current = lnode;
         while(current != NULL){
-            num += (current->val * exponentOfTen);
-            exponentOfTen *= 10;
+            num += (current->val * multipleOfTen);
+            multipleOfTen *= 10;
             current = current->next;
         }
         return num;
