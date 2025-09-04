@@ -6,21 +6,20 @@ using namespace std;
 
 int size = 0;
 
+//takes user input to make array for test case
 vector<int> convertNumToArray(int num){
-    //takes user input to make array for test case
     int temp = num;
-    //int size = 0;
     while(temp > 0){
         temp /= 10;
         size++;
     }
-    vector<int> convertedArray(size);
+
+//reverse array to unflip nums for clear output
+vector<int> convertedArray(size);
     for(int i = 0; i < size; i++){
         convertedArray[i] = num % 10;
         num /= 10;
     }
-    
-    //reverse array to unflip nums for clear output
     for(int i = 0; i < size/2; i++){
         int front = convertedArray[i];
         int back = convertedArray[size - 1- i];
@@ -30,6 +29,7 @@ vector<int> convertNumToArray(int num){
     return convertedArray;
 }
 
+//returns first set of 2 int nums that sum up to target int
 vector<int> twoSum(vector<int>& nums, int target) {
     vector<int> result(2);
     for(int i = 0; i < size-1; i++){
@@ -44,6 +44,7 @@ vector<int> twoSum(vector<int>& nums, int target) {
     return result;
 }
 
+//prints array
 void print(vector<int>& array){
     int size = array.size();
     for(int i = 0; i < size; i++){
@@ -51,6 +52,7 @@ void print(vector<int>& array){
     }
 }
 
+//manual test in console
 int main()
 {
     int userInput;
